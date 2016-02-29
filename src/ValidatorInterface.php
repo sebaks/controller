@@ -15,4 +15,9 @@ interface ValidatorInterface
      * @return mixed
      */
     public function getErrors();
+
+    /**
+     * @return mixed
+     */
+    public function getValid();
 }

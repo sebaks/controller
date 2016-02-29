@@ -46,7 +46,10 @@ class Controller
 
         if ($this->criteriaValidator->isValid($criteria)) {
             if ($this->changesValidator->isValid($changes)) {
-                $result = $this->service->handle($criteria, $changes);
+                $result = $this->service->handle(
+                    $this->criteriaValidator->getValid(),
+                    $this->changesValidator->getValid()
+                );
                 $response->setResult($result);
             } else {
                 $response->setChangesErrors($this->changesValidator->getErrors());
