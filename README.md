@@ -31,3 +31,5 @@ Almost all controllers have similar workflow:
 - Build response
 
 That solution provide this
+
+Go to [sebaks/zend-mvc-controller](https://github.com/sebaks/zend-mvc-controller) to see controller implementation for Zend MVC.
