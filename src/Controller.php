@@ -27,8 +27,9 @@ class Controller
     public function __construct(
         ValidatorInterface $criteriaValidator,
         ValidatorInterface $changesValidator,
-        ServiceInterface $service)
-    {
+        ServiceInterface $service
+    ) {
+
         $this->criteriaValidator = $criteriaValidator;
         $this->changesValidator = $changesValidator;
         $this->service = $service;
