@@ -28,13 +28,6 @@ class ControllerTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @covers Request::setCriteria
-     * @covers Request::setChanges
-     * @covers Response::getResult
-     * @covers Response::getCriteria
-     * @covers Response::getChanges
-     */
     public function testDispatchWithValidAll()
     {
         $request = new Request();
@@ -60,15 +53,6 @@ class ControllerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($changes, $response->getChanges());
     }
 
-    /**
-     * @covers Request::setCriteria
-     * @covers Request::setChanges
-     * @covers Response::setChangesErrors
-     * @covers Response::getChangesErrors
-     * @covers Response::getResult
-     * @covers Response::getCriteria
-     * @covers Response::getChanges
-     */
     public function testDispatchWithNotValidChanges()
     {
         $request = new Request();
@@ -93,15 +77,6 @@ class ControllerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($error, $response->getChangesErrors());
     }
 
-    /**
-     * @covers Request::setCriteria
-     * @covers Request::setChanges
-     * @covers Response::setCriteriaErrors
-     * @covers Response::getCriteriaErrors
-     * @covers Response::getResult
-     * @covers Response::getCriteria
-     * @covers Response::getChanges
-     */
     public function testDispatchWithNotValidCriteria()
     {
         $request = new Request();
