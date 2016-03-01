@@ -36,11 +36,11 @@ class Controller
     }
 
     /**
-     * @param Request $request
-     * @param Response $response
-     * @return Response
+     * @param RequestInterface $request
+     * @param ResponseInterface $response
+     * @return ResponseInterface
      */
-    public function dispatch(Request $request, Response $response)
+    public function dispatch(RequestInterface $request, ResponseInterface $response)
     {
         $criteria = $request->getCriteria();
         $changes = $request->getChanges();
