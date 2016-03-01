@@ -19,7 +19,9 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
         $response->setCriteriaErrors($criteriaError);
         $response->setChangesErrors($changesError);
         $response->setCriteria($criteria);
+        $response->setValidCriteria($criteria);
         $response->setChanges($changes);
+        $response->setValidChanges($changes);
 
         $resultArray = $response->toArray();
 
@@ -30,6 +32,8 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
                 'changesErrors' => $changesError,
                 'criteria' => $criteria,
                 'changes' => $changes,
+                'validCriteria' => $criteria,
+                'validChanges' => $changes,
             ],
             $resultArray
         );

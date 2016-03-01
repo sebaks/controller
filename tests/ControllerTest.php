@@ -51,6 +51,8 @@ class ControllerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($result, $response->getResult());
         $this->assertEquals($criteria, $response->getCriteria());
         $this->assertEquals($changes, $response->getChanges());
+        $this->assertEquals($criteria, $response->getValidCriteria());
+        $this->assertEquals($changes, $response->getValidChanges());
     }
 
     public function testDispatchWithNotValidChanges()
@@ -67,6 +69,8 @@ class ControllerTest extends \PHPUnit_Framework_TestCase
         $this->criteriaValidator->isValid($criteria)->willReturn(true);
         $this->changesValidator->isValid($changes)->willReturn(false);
         $this->changesValidator->getErrors()->willReturn($error);
+        $this->changesValidator->getValid()->willReturn([]);
+        $this->criteriaValidator->getValid()->willReturn([]);
 
         $response = $this->controller->dispatch($request, $response);
 
@@ -83,13 +87,14 @@ class ControllerTest extends \PHPUnit_Framework_TestCase
         $response = new Response();
         $criteria = ['some' => 'criteria'];
         $changes = ['key' => 'value'];
-        $error = ['some' => 'error'];
+        $errors = ['some' => 'error'];
 
         $request->setCriteria($criteria);
         $request->setChanges($changes);
 
         $this->criteriaValidator->isValid($criteria)->willReturn(false);
-        $this->criteriaValidator->getErrors()->willReturn($error);
+        $this->criteriaValidator->getErrors()->willReturn($errors);
+        $this->criteriaValidator->getValid()->willReturn([]);
 
         $response = $this->controller->dispatch($request, $response);
 
@@ -97,6 +102,6 @@ class ControllerTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($response->getResult());
         $this->assertEquals($criteria, $response->getCriteria());
         $this->assertEquals($changes, $response->getChanges());
-        $this->assertEquals($error, $response->getCriteriaErrors());
+        $this->assertEquals($errors, $response->getCriteriaErrors());
     }
 }

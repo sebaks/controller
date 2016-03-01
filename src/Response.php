@@ -28,6 +28,16 @@ class Response implements ResponseInterface
     /**
      * @var mixed
      */
+    private $validChanges;
+
+    /**
+     * @var mixed
+     */
+    private $validCriteria;
+
+    /**
+     * @var mixed
+     */
     private $result;
 
     /**
@@ -81,6 +91,22 @@ class Response implements ResponseInterface
     /**
      * @return mixed
      */
+    public function getValidChanges()
+    {
+        return $this->validChanges;
+    }
+
+    /**
+     * @param mixed $validChanges
+     */
+    public function setValidChanges($validChanges)
+    {
+        $this->validChanges = $validChanges;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getCriteria()
     {
         return $this->criteria;
@@ -92,6 +118,22 @@ class Response implements ResponseInterface
     public function setCriteria($criteria)
     {
         $this->criteria = $criteria;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getValidCriteria()
+    {
+        return $this->validCriteria;
+    }
+
+    /**
+     * @param mixed $validCriteria
+     */
+    public function setValidCriteria($validCriteria)
+    {
+        $this->validCriteria = $validCriteria;
     }
 
     /**
@@ -120,7 +162,9 @@ class Response implements ResponseInterface
             'criteriaErrors' => $this->criteriaErrors,
             'changesErrors' => $this->changesErrors,
             'criteria' => $this->criteria,
+            'validCriteria' => $this->validCriteria,
             'changes' => $this->changes,
+            'validChanges' => $this->validChanges,
         ];
     }
 }

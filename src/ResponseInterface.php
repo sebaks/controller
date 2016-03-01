@@ -38,12 +38,32 @@ interface ResponseInterface
     /**
      * @return mixed
      */
+    public function getValidChanges();
+
+    /**
+     * @param mixed $validChanges
+     */
+    public function setValidChanges($validChanges);
+
+    /**
+     * @return mixed
+     */
     public function getCriteria();
 
     /**
      * @param mixed $criteria
      */
     public function setCriteria($criteria);
+
+    /**
+     * @return mixed
+     */
+    public function getValidCriteria();
+
+    /**
+     * @param mixed $validCriteria
+     */
+    public function setValidCriteria($validCriteria);
 
     /**
      * @return mixed

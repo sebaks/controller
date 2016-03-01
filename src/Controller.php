@@ -61,6 +61,8 @@ class Controller
 
         $response->setCriteria($criteria);
         $response->setChanges($changes);
+        $response->setValidCriteria($this->criteriaValidator->getValid());
+        $response->setValidChanges($this->changesValidator->getValid());
 
         return $response;
     }
