@@ -2,6 +2,8 @@
 
 namespace Sebaks\Controller;
 
+use T4webDomainInterface\ServiceInterface;
+
 class EmptyService implements ServiceInterface
 {
     /**

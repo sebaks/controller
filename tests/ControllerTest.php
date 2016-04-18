@@ -4,9 +4,9 @@ namespace Sebaks\ControllerTest;
 
 use Sebaks\Controller\Controller;
 use Sebaks\Controller\ValidatorInterface;
-use Sebaks\Controller\ServiceInterface;
 use Sebaks\Controller\Request;
 use Sebaks\Controller\Response;
+use T4webDomainInterface\ServiceInterface;
 
 class ControllerTest extends \PHPUnit_Framework_TestCase
 {
