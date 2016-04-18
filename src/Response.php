@@ -41,6 +41,11 @@ class Response implements ResponseInterface
     private $result;
 
     /**
+     * @var mixed
+     */
+    private $redirectTo;
+
+    /**
      * @return mixed
      */
     public function getCriteriaErrors()
@@ -150,6 +155,22 @@ class Response implements ResponseInterface
     public function setResult($result)
     {
         $this->result = $result;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRedirectTo()
+    {
+        return $this->redirectTo;
+    }
+
+    /**
+     * @param mixed $redirectTo
+     */
+    public function setRedirectTo($redirectTo)
+    {
+        $this->redirectTo = $redirectTo;
     }
 
     /**

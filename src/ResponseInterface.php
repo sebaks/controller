@@ -76,6 +76,16 @@ interface ResponseInterface
     public function setResult($result);
 
     /**
+     *  @return mixed
+     */
+    public function getRedirectTo();
+
+    /**
+     * @param mixed $redirectTo
+     */
+    public function setRedirectTo($redirectTo);
+
+    /**
      * @return array
      */
     public function toArray();
